@@ -18,7 +18,7 @@ export const TodoListSection: FC = () => {
 			queryParams: {
 				custom: [
 					{ key: 'page[size]', value: '3' },
-					{ key: 'page[number]', value: '1' },
+					{ key: 'page[number]', value: '0' },
 				],
 			},
 		},
