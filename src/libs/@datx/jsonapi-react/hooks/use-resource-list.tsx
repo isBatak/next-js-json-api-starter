@@ -72,5 +72,5 @@ export function useResourceList<TModel extends Resource = Resource, TMeta extend
 		},
 	});
 
-	return (state as unknown) as ResourceListResponse<TModel, TMeta>;
+	return state as unknown as ResourceListResponse<TModel, TMeta>;
 }

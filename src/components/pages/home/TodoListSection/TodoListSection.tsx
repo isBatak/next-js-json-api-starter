@@ -14,18 +14,18 @@ import { BasicPagination } from '@/components/shared/paginations/BasicPagination
 export const TodoListSection: FC = () => {
 	const { data, error, hasNext, hasPrev, next, prev } = useResourceList(() => [
 		Todo,
-		{
-			queryParams: {
-				custom: [
-					{ key: 'page[size]', value: '3' },
-					{ key: 'page[number]', value: '0' },
-				],
-			},
-		},
+		// {
+		// 	queryParams: {
+		// 		custom: [
+		// 			{ key: 'page[size]', value: '3' },
+		// 			{ key: 'page[number]', value: '0' },
+		// 		],
+		// 	},
+		// },
 	]);
 
 	if (error) {
-		throw { statusCode: 404 };
+		throw error;
 	}
 
 	if (!data) {
