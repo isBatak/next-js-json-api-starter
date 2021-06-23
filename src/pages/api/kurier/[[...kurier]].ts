@@ -20,5 +20,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 		req.body = JSON.parse(req.body);
 	}
 
+	// @ts-ignore
 	await jsonApiVercel(app)(req, res);
 };
