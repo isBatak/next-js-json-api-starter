@@ -3,7 +3,7 @@ import { apify, deapify } from '@datx/jsonapi-react';
 
 config.cache = CachingStrategy.NetworkOnly;
 
-config.baseUrl = process.env.NEXT_PUBLIC_API_ENDPOINT;
+config.baseUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/kurier/`;
 
 config.transformResponse = (opts: IRawResponse) => {
 	return { ...opts, data: deapify(opts.data) };
