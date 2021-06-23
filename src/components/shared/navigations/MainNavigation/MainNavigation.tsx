@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Flex, Image, useColorMode, IconButton, Button, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react';
+import { Box, Flex, Link, useColorMode, IconButton, Button, Heading, LinkBox, LinkOverlay } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 import { NavigationWrapper } from './MainNavigation.elements';
@@ -15,12 +15,13 @@ export const MainNavigation: FC = () => {
 			<Flex justifyContent="space-between" alignItems="center">
 				<LinkBox>
 					<NextLink href="/" passHref>
-						<LinkOverlay>
-							<Image src="/images/logo.png" htmlWidth="64px" />
-						</LinkOverlay>
+						<Link>
+							<Heading as="span" size="lg">
+								Todo
+							</Heading>
+						</Link>
 					</NextLink>
 				</LinkBox>
-				<Heading size="lg">React example</Heading>
 				<Box>
 					<Button disabled mr={2}>
 						Logout

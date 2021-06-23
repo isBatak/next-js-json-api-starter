@@ -19,7 +19,7 @@ app.services.knex = knex({
 
 // Export the middleware result so Next.js can handle Kurier endpoints.
 export default (req: NextApiRequest, res: NextApiResponse) => {
-	if (req.body) {
+	if (req.headers['content-type'] === 'application/vnd.api+json' && req.body) {
 		req.body = JSON.parse(req.body);
 	}
 

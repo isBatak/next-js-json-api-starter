@@ -2,7 +2,7 @@ import { Attribute } from '@datx/core';
 import { Resource } from '@datx/jsonapi-react';
 
 export class Todo extends Resource {
-	static type = 'todos';
+	static type = 'todo';
 
 	@Attribute({ isIdentifier: true })
 	public id!: string | number;

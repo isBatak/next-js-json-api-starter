@@ -18,6 +18,7 @@ export const TodoCard: FC<ITodoCardProps> = ({ todo, ...rest }) => (
 		<Text fontSize="xl" mb={8} whiteSpace="pre-line">
 			{todo.body}
 		</Text>
+		{console.log(todo)}
 		<NextLink href="/todo/[id]" as={`/todo/${todo.id}`} passHref>
 			<Button mr={6} as="a">
 				Preview
