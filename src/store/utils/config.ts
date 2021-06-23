@@ -5,7 +5,7 @@ config.cache = CachingStrategy.NetworkOnly;
 
 console.log(process.env.NEXT_PUBLIC_VERCEL_URL);
 
-config.baseUrl = `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/kurier/`;
+config.baseUrl = `http://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/kurier/`;
 
 config.transformResponse = (opts: IRawResponse) => {
 	return { ...opts, data: deapify(opts.data) };
