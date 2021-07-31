@@ -1,4 +1,6 @@
-require('dotenv').config();
+require('dotenv-flow').config();
+
+console.log(process.env.DB_CONNECTION_STRING);
 
 module.exports = {
 	client: 'pg',

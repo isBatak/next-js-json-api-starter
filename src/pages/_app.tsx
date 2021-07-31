@@ -9,6 +9,10 @@ import client from '../store';
 
 import '../store/utils/config';
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === 'enabled') {
+	require('../mocks');
+}
+
 function MyApp({ Component, pageProps }: AppProps): ReactElement {
 	return (
 		<DatxProvider client={client}>
