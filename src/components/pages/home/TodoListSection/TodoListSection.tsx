@@ -1,7 +1,7 @@
 import React, { FC, Fragment } from 'react';
 import { Box, Container, Divider, Heading, IconButton } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { useResourceList } from '@datx/jsonapi-react';
+import { useQuery } from '@kurier/react';
 
 import { Todo } from '@/resources/Todo';
 import { TodoList } from '@/components/shared/todo/TodoList/TodoList';
@@ -9,20 +9,10 @@ import { LoadingMessage } from '@/components/shared/messages/LoadingMessage/Load
 import { EmptyListMessage } from '@/components/shared/messages/EmptyListMessage/EmptyListMessage';
 
 import PlusIcon from '@/assets/icons/ic-plus.svg';
-import { BasicPagination } from '@/components/shared/paginations/BasicPagination/BasicPagination';
+// import { BasicPagination } from '@/components/shared/paginations/BasicPagination/BasicPagination';
 
 export const TodoListSection: FC = () => {
-	const { data, error, hasNext, hasPrev, next, prev } = useResourceList(() => [
-		Todo,
-		// {
-		// 	queryParams: {
-		// 		custom: [
-		// 			{ key: 'page[size]', value: '3' },
-		// 			{ key: 'page[number]', value: '0' },
-		// 		],
-		// 	},
-		// },
-	]);
+	const { data, error } = useQuery((q) => q.findRecords('todo'));
 
 	if (error) {
 		throw error;
@@ -46,7 +36,7 @@ export const TodoListSection: FC = () => {
 				{data.length > 0 ? (
 					<Fragment>
 						<TodoList todoList={data} />
-						<BasicPagination hasNext={hasNext} hasPrev={hasPrev} onNext={next} onPrev={prev} current={1} total={10} />
+						{/* <BasicPagination hasNext={hasNext} hasPrev={hasPrev} onNext={next} onPrev={prev} current={1} total={10} /> */}
 					</Fragment>
 				) : (
 					<EmptyListMessage />

@@ -1,15 +1,11 @@
-import { Attribute } from '@datx/core';
-import { Resource } from '@datx/jsonapi-react';
+import { Resource } from 'kurier';
 
 export class Todo extends Resource {
-	static type = 'todo';
-
-	@Attribute({ isIdentifier: true })
-	public id!: string | number;
-
-	@Attribute()
-	public title!: string;
-
-	@Attribute()
-	public body!: string;
+	static schema = {
+		attributes: {
+			title: String,
+			body: String,
+		},
+		relationships: {},
+	};
 }

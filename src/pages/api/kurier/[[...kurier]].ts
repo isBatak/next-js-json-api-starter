@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import config from '../../../../knexfile.js';
 
-import Todo from '@/kurier/resources/todo';
+import { Todo } from '@/resources/Todo';
 
 const app = new Application({
 	namespace: 'api/kurier',

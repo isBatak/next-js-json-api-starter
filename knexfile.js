@@ -8,7 +8,7 @@ module.exports = {
 	useNullAsDefault: true,
 	debug: true,
 	migrations: {
-		directory: './src/kurier/migrations',
+		directory: './src/migrations',
 		loadExtensions: ['.js'],
 	},
 };

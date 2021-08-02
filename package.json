@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' NEXT_PUBLIC_API_MOCKING='enabled' next dev",
+    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev:mocked": "NODE_OPTIONS='--inspect' NEXT_PUBLIC_API_MOCKING='enabled' next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest --coverage",

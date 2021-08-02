@@ -21,7 +21,7 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"],
-			"@datx/jsonapi-react": ["src/libs/@datx/jsonapi-react"]
+			"@kurier/*": ["src/libs/@kurier/*"]
 		},
 	},
 

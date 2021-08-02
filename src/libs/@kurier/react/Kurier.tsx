@@ -1,7 +1,15 @@
-import { createContext } from 'react';
+import { createContext, FC } from 'react';
+import { Client } from '@kurier/client';
+import { Store } from '@kurier/store';
 
-const KurierContext = createContext(null);
+export const KurierContext = createContext<any>(null);
 
-export const Kurier = ({ children, snapshot }) => {
-	return <KurierContext.Provider value={{}}>{children}</KurierContext.Provider>;
+export interface IKurierProps {
+	snapshot?: any;
+}
+
+export const Kurier: FC<IKurierProps> = ({ children, snapshot }) => {
+	const client = new Client({ store: new Store(snapshot) });
+
+	return <KurierContext.Provider value={client}>{children}</KurierContext.Provider>;
 };

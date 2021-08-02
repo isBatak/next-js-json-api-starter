@@ -1,1 +1,1 @@
-export * as Store from './Store';
+export { Store } from './Store';

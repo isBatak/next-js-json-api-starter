@@ -1,7 +1,11 @@
-const collection = new Map();
+export class Store {
+	private collection = new Map();
 
-const Store = ({ snapshot }) => {
-	return collection;
-};
+	constructor({ snapshot } = {}) {
+		console.log(snapshot);
+	}
 
-export default Store;
+	public get(key: string) {}
+
+	public set(key: string) {}
+}
