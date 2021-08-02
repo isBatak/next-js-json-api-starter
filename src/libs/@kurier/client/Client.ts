@@ -1,5 +1,5 @@
 import { Store } from '@kurier/store';
-import { QueryBuilder } from './QueryBuilder';
+import { QueryBuilder } from './query-builder';
 export class Client {
 	private store: Store;
 
@@ -8,7 +8,7 @@ export class Client {
 	}
 
 	public prepareQuery(fn) {
-		return fn(new QueryBuilder());
+		return fn(QueryBuilder);
 	}
 
 	public query(queryExpression, options) {
