@@ -14,6 +14,11 @@ import { BasicPagination } from '@/components/shared/paginations/BasicPagination
 export const TodoListSection: FC = () => {
 	const { data, error, hasNext, hasPrev, next, prev } = useResourceList(() => [
 		Todo,
+		{
+			queryParams: {
+				include: 'user',
+			},
+		},
 		// {
 		// 	queryParams: {
 		// 		custom: [

@@ -15,6 +15,11 @@ export const TodoCard: FC<ITodoCardProps> = ({ todo, ...rest }) => (
 		<Heading as="h2" size="lg" mb={2}>
 			{todo.title}
 		</Heading>
+		{todo.author && (
+			<Text fontSize="md" mb={2} whiteSpace="pre-line">
+				{todo.author.name}
+			</Text>
+		)}
 		<Text fontSize="xl" mb={8} whiteSpace="pre-line">
 			{todo.body}
 		</Text>
